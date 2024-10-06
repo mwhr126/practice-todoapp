@@ -4,4 +4,7 @@ class HomeController < ActionController::Base
     @board = Board.first
   end
 
+  def board
+  end
+
 end
