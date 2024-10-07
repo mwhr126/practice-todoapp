@@ -1,26 +1,26 @@
 /home/index.html.erb です
 
-<h2><%= @board.title %></h2>
-<h3><%= @board.content %></h3>
-
-<%= link_to 'Board', board_path %>
-
 <div class="brakets-wrapper">
   <h2>Brackets</h2>
-  <div class="board-content">
-    <div class="board-thumbnail">
-      <%= image_tag 'common/pic-thumbnail.png' %>
-    </div>
-    <div class="board-txt-block">
-      <h3>タイトルが入る</h3>
-      <p>内容が入る内容が入る内容が入る内容が入る</p>
-    </div>
-    <div class="board-user-block">
-      <%= image_tag 'common/icon-default-avatar.png', class: 'header-avatar' %>
-      <div class="">
-        <span class="comment-number">23</span>
-        <%= image_tag 'common/icon-message-square-outline.svg', class: 'comment-icon' %>
+
+  <% @boards.each do |board| %>
+    <%= link_to board_path(board) do %>
+      <div class="board-content">
+        <div class="board-thumbnail">
+          <%= image_tag 'common/pic-thumbnail.png' %>
+        </div>
+        <div class="board-txt-block">
+          <h3><%= board.title %></h3>
+          <p><%= board.content %></p>
+        </div>
+        <div class="board-user-block">
+          <%= image_tag 'common/icon-default-avatar.png', class: 'header-avatar' %>
+          <div class="">
+            <span class="comment-number">23</span>
+            <%= image_tag 'common/icon-message-square-outline.svg', class: 'comment-icon' %>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+    <% end %>
+  <% end %>
 </div>

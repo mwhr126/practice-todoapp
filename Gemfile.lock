@@ -83,6 +83,8 @@ GEM
       responders
       warden (~> 1.2.3)
     erubi (1.13.0)
+    faker (2.22.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.17.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
@@ -236,6 +238,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise (~> 4.9)
+  faker
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
