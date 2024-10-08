@@ -9,9 +9,24 @@
 }
 
 
+.board-content {
+  position: relative;
 
-.board-user-block {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  .dropdown {
+    position: absolute;
+    top: 9px;
+    right: 0;
+    background-color: #fff;
+    padding: 0 0 5px 5px;
+  }
+
+  .dropbtn {
+    display: block;
+    margin: 0 0 10px auto;
+  }
 }
+
+
+
+
+

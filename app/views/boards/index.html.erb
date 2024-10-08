@@ -2,24 +2,31 @@
 
 <div class="brakets-wrapper">
   <h2>Brackets</h2>
-
   <% @boards.each do |board| %>
     <%= link_to board_path(board) do %>
       <div class="board-content">
-        <div class="board-thumbnail">
-          <%= image_tag 'common/pic-thumbnail.png' %>
-        </div>
+        <!--<div class="board-thumbnail">
+          <%#= image_tag 'common/pic-thumbnail.png' %>
+        </div>-->
         <div class="board-txt-block">
           <h3><%= board.title %></h3>
           <p><%= board.content %></p>
         </div>
         <div class="board-user-block">
           <%= image_tag 'common/icon-default-avatar.png', class: 'header-avatar' %>
-          <div class="">
+          <div class="comment-block">
             <span class="comment-number">23</span>
             <%= image_tag 'common/icon-message-square-outline.svg', class: 'comment-icon' %>
           </div>
         </div>
+        <object class="dots-block">
+          <div class="dropdown">
+            <%= image_tag 'common/icon-dots.svg', class: 'dropbtn' %>
+            <div class="dropdown-content mini">
+              <a href="#">編集する</a>
+            </div>
+          </div>
+        </object>
       </div>
     <% end %>
   <% end %>

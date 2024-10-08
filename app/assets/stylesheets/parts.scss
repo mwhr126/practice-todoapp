@@ -13,3 +13,19 @@
 }
 
 
+
+.dropdown-content {
+  display: none;
+}
+
+.dropdown-content a {
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
