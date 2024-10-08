@@ -1,0 +1,15 @@
+<div class="form-wrapper">
+  <%= form_with(model: @board, url: boards_path, method: 'post', local: true ) do |f| %>
+    <div class="input-area">
+      <%= f.label :title, 'Name', class: 'form-label' %>
+      <%= f.text_field :title %>
+    </div>
+    <div class="input-area">
+      <%= f.label :content, 'Description', class: 'form-label' %>
+      <%= f.text_area :content %>
+    </div>
+    <div class="form-btn">
+      <%= f.submit 'Submit' %>
+    </div>
+  <% end %>
+</div>
