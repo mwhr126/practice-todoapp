@@ -144,6 +144,8 @@ textarea{
 	width:100%;
 	height:auto;
 	padding:10px;
+  resize: vertical;
+  min-height: 200px;
 }
 
 input[type="file"]{
