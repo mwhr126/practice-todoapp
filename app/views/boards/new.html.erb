@@ -1,4 +1,9 @@
 <div class="form-wrapper">
+  <ul>
+    <% @board.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
   <%= form_with(model: @board, url: boards_path, method: 'post', local: true ) do |f| %>
     <div class="input-area">
       <%= f.label :title, 'Name', class: 'form-label' %>
