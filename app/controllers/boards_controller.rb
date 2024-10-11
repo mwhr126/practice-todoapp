@@ -15,7 +15,8 @@ class BoardsController < ApplicationController
   end
 
   def create
-    @board = Board.new(board_params)
+    @board = current_user.boards.build(board_params)
+    # @board = Board.new(board_params)
     if @board.save
       redirect_to board_path(@board), notice: '保存できました。'
     else
