@@ -17,7 +17,7 @@
         <% if !current_page?(root_path) %>
             <h1><%= link_to :back do %>Boards<% end %></h1>
           <% else %>
-            <h1>Boards</h1>
+            <h1>ボード</h1>
         <% end %>
         <% if user_signed_in? %>
           <%= image_tag 'common/icon-default-avatar.png', class: 'header-avatar' %>
