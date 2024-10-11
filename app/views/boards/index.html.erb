@@ -12,13 +12,16 @@
         </div>
         <div class="board-user-block">
           <%= image_tag 'common/icon-default-avatar.png', class: 'header-avatar' %>
+          <% if board.user.present? %>
+            <%= board.user.display_name %>
+          <% end %>
           <div class="comment-block">
             <!--<span class="comment-number">23</span>-->
             <%#= image_tag 'common/icon-message-square-outline.svg', class: 'comment-icon' %>
             <span class="board-time">作成日：<%= board.display_created_at %></span>
           </div>
         </div>
-        <% if user_signed_in? %>
+        <% if user_signed_in? && current_user.has_written?(board) %>
           <object class="dots-block">
             <div class="dropdown">
               <%= image_tag 'common/icon-dots.svg', class: 'dropbtn' %>
