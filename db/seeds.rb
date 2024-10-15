@@ -7,6 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+
+User.create!(email: '')
+
+
 10.times do
   Board.create(
     title: Faker::Lorem.sentence(word_count: 5),

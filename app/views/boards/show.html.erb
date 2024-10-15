@@ -1,17 +1,25 @@
 <p>show.html.erbです</p>
 <div class="board-content">
-  <div class="board-thumbnail">
-    <%= image_tag 'common/pic-thumbnail.png' %>
-  </div>
+  <!--<div class="board-thumbnail">
+    <%#= image_tag 'common/pic-thumbnail.png' %>
+  </div>-->
   <div class="board-txt-block">
     <h3><%= @board.title %></h3>
     <p><%= @board.content %></p>
   </div>
   <div class="board-user-block">
-    <%= image_tag 'common/icon-default-avatar.png', class: 'header-avatar' %>
-    <div class="">
-      <span class="comment-number">23</span>
-      <%= image_tag 'common/icon-message-square-outline.svg', class: 'comment-icon' %>
+    <div class="avatar-name-block">
+      <%= image_tag 'common/icon-default-avatar.png', class: 'header-avatar' %>
+      <% if @board.user.present? %>
+        <div class="avatar-name">
+          <%= @board.ahthor_name %>
+        </div>
+      <% end %>
+    </div>
+    <div class="comment-block">
+      <!--<span class="comment-number">23</span>
+      <%#= image_tag 'common/icon-message-square-outline.svg', class: 'comment-icon' %>-->
+      <span class="board-time">作成日：<%= @board.display_created_at %></span>
     </div>
   </div>
 </div>

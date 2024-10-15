@@ -7,9 +7,11 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
 
   <body>
     <header>
@@ -20,8 +22,10 @@
             <h1>ボード</h1>
         <% end %>
         <% if user_signed_in? %>
-          <%= image_tag 'common/icon-default-avatar.png', class: 'header-avatar' %>
-          <%= link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete' } %>
+          <div class="header-avatar-block">
+            <%= image_tag 'common/icon-default-avatar.png', class: 'avatar-img' %>
+            <%= link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete' }, class: 'logout-link'%>
+          </div>
         <% else %>
           <%= link_to 'ログイン', new_user_session_path %>
         <% end %>
