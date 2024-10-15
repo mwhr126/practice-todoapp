@@ -1,7 +1,7 @@
 <div class="brakets-wrapper">
   <h2>全てのボード</h2>
   <% @boards.each do |board| %>
-    <%= link_to board_path(board) do %>
+    <%= link_to board_path(board), class: "board-link" do %>
       <div class="board-content">
         <!--<div class="board-thumbnail">
           <%#= image_tag 'common/pic-thumbnail.png' %>
@@ -11,10 +11,14 @@
           <p><%= board.content %></p>
         </div>
         <div class="board-user-block">
-          <%= image_tag 'common/icon-default-avatar.png', class: 'header-avatar' %>
-          <% if board.user.present? %>
-            <%= board.user.display_name %>
-          <% end %>
+          <div class="avatar-name-block">
+            <%= image_tag 'common/icon-default-avatar.png', class: 'header-avatar' %>
+            <% if board.user.present? %>
+              <div class="avatar-name">
+                <%= board.ahthor_name %>
+              </div>
+            <% end %>
+          </div>
           <div class="comment-block">
             <!--<span class="comment-number">23</span>-->
             <%#= image_tag 'common/icon-message-square-outline.svg', class: 'comment-icon' %>
